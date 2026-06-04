@@ -1,33 +1,58 @@
-# Ignore node_modules directory
-node_modules/
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
 
-# Ignore log files
-*.log
+# Virtual environments
+venv/
+env/
+.venv/
 
-# Ignore build directories
-dist/
-build/
-
-# Ignore environment variable files
+# Environment variable files
 .env
+.env.*
 
-# Ignore OS-specific files
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific
 .DS_Store
 Thumbs.db
 
-# Ignore IDE-specific files
-.vscode/
-.idea/
+# Build / Distribution
+dist/
+build/
+*.egg-info/
+*.egg
 
-# Ignore compiled files
-*.out
-*.class
-*.pyc
-*.o
+# Logs
+*.log
 
-# Ignore coverage reports
+# Testing / Coverage
+.pytest_cache/
+htmlcov/
 coverage/
 *.lcov
+.coverage
 
-# Ignore dependency directories
+# Saved models and data artifacts
+saved_models/
+*.h5
+*.pkl
+*.joblib
+
+# Node (if any frontend tooling is added)
+node_modules/
+
+# Compiled files
+*.out
+*.class
+*.o
+
+# Dependency directories
 vendor/

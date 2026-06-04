@@ -1,27 +1,67 @@
-# web/templates/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Price Prediction Dashboard</title>
+    <meta name="description" content="Real-time cryptocurrency price predictions using machine learning models including LSTM, XGBoost, LightGBM, and more.">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
+    <header id="app-header">
+        <h1>&#x20BF; Crypto Price Prediction</h1>
+        <p class="subtitle">ML-powered price forecasting &amp; backtesting dashboard</p>
+    </header>
+
     <div id="dashboard">
-        <div class="chart-container">
-            <div id="price-chart"></div>
-            <div id="prediction-chart"></div>
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat-card" id="stat-current-price">
+                <span class="stat-label">Current Price</span>
+                <span class="stat-value" id="current-price">Loading...</span>
+            </div>
+            <div class="stat-card" id="stat-predicted-price">
+                <span class="stat-label">Predicted Price</span>
+                <span class="stat-value" id="predicted-price">Loading...</span>
+            </div>
+            <div class="stat-card" id="stat-direction">
+                <span class="stat-label">Direction</span>
+                <span class="stat-value" id="direction">—</span>
+            </div>
+            <div class="stat-card" id="stat-confidence">
+                <span class="stat-label">Confidence</span>
+                <span class="stat-value" id="confidence">—</span>
+            </div>
         </div>
+
+        <div class="chart-container">
+            <div class="chart-card" id="price-chart-card">
+                <h2>Price Chart</h2>
+                <div id="price-chart"></div>
+            </div>
+            <div class="chart-card" id="prediction-chart-card">
+                <h2>Predictions vs Actual</h2>
+                <div id="prediction-chart"></div>
+            </div>
+        </div>
+
         <div class="metrics-container">
-            <div id="performance-metrics"></div>
-            <div id="probability-gauge"></div>
+            <div class="metric-card" id="performance-metrics">
+                <h2>Performance Metrics</h2>
+                <div id="metrics-content">Loading...</div>
+            </div>
+            <div class="metric-card" id="probability-gauge-card">
+                <h2>Portfolio Performance</h2>
+                <div id="probability-gauge"></div>
+            </div>
         </div>
     </div>
+
+    <footer id="app-footer">
+        <p>Cryptocurrency Price Prediction System &mdash; For educational purposes only</p>
+    </footer>
+
     <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>
-
-
-
-
